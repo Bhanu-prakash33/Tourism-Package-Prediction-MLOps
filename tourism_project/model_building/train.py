@@ -94,7 +94,7 @@ print("scale_pos_weight:", scale_pos_weight)
 # ----------------------------
 preprocessor = make_column_transformer(
     (StandardScaler(), numeric_features),
-    (OneHotEncoder(handle_unknown="ignore", sparse=False), categorical_features),
+    (OneHotEncoder(handle_unknown="ignore", sparse_output=False), categorical_features),
 )
 
 xgb_model = xgb.XGBClassifier(use_label_encoder=False, eval_metric="logloss",
