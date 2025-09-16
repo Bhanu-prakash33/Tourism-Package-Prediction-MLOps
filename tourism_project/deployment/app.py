@@ -43,6 +43,7 @@ typeof_contact = st.radio("Type of Contact", ["Company Invited", "Self Enquiry"]
 city_tier = st.selectbox("City Tier", [1, 2, 3])
 duration_of_pitch = st.slider("Duration of Pitch (minutes)", 1, 60, 15)
 product_pitched = st.selectbox("Product Pitched", ["Basic", "Deluxe", "Super Deluxe", "King", "Queen", "Other"])
+pitch_satisfaction = st.slider("Pitch Satisfaction Score", 1, 5, 3)  
 
 # Family & Lifestyle
 st.subheader("🏠 Family & Lifestyle")
@@ -78,7 +79,8 @@ input_data = pd.DataFrame([{
     "OwnCar": 1 if own_car == "Yes" else 0,
     "NumberOfChildrenVisiting": children_visiting,
     "Designation": designation,
-    "MonthlyIncome": monthly_income
+    "MonthlyIncome": monthly_income,
+    "PitchSatisfactionScore": pitch_satisfaction
 }])
 
 # ---------------------------
